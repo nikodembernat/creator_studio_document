@@ -1,0 +1,524 @@
+{
+ "theme": {
+  "name": "White",
+  "locale": "en_US",
+  "type_identifier": "com.apple.apps.content-language.keynote-theme",
+  "version": "1.0"
+ },
+ "slide_size": {
+  "width": 1920.0,
+  "height": 1080.0,
+  "type_identifier": "com.apple.apps.content-language.size",
+  "version": "1.0"
+ },
+ "slides": [
+  {
+   "contents": [
+    {
+     "object": {
+      "group": {
+       "title": {
+        "paragraph_properties": {
+         "alignment": "center",
+         "character_properties": {
+          "character_fill": {
+           "color": {
+            "rgba": {
+             "red": 0.96,
+             "green": 0.94,
+             "blue": 0.9,
+             "type_identifier": "com.apple.apps.content-language.color.rgba",
+             "version": "1.1"
+            },
+            "type_identifier": "com.apple.apps.content-language.color",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.fill",
+           "version": "1.0"
+          },
+          "font_size": 14.0,
+          "type_identifier": "com.apple.apps.content-language.character-properties",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+         "version": "1.0"
+        },
+        "text": {
+         "string": "Hero",
+         "type_identifier": "com.apple.apps.content-language.text",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.label",
+        "version": "1.0"
+       },
+       "caption": {
+        "text": {
+         "string": "hidden caption; kept for round-trip",
+         "type_identifier": "com.apple.apps.content-language.text",
+         "version": "1.0"
+        },
+        "is_visible": false,
+        "type_identifier": "com.apple.apps.content-language.label",
+        "version": "1.0"
+       },
+       "children": [
+        {
+         "image": {
+          "geometry": {
+           "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "type_identifier": "com.apple.apps.content-language.position",
+            "version": "1.0"
+           },
+           "size": {
+            "width": 1920.0,
+            "height": 600.0,
+            "type_identifier": "com.apple.apps.content-language.size",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.geometry",
+           "version": "1.0"
+          },
+          "resource": {
+           "indirect": {
+            "filename": "hero.png",
+            "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.resource",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.image",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.canvas-object",
+         "version": "1.0"
+        },
+        {
+         "shape": {
+          "geometry": {
+           "position": {
+            "x": 0.0,
+            "y": 350.0,
+            "type_identifier": "com.apple.apps.content-language.position",
+            "version": "1.0"
+           },
+           "size": {
+            "width": 1920.0,
+            "height": 350.0,
+            "type_identifier": "com.apple.apps.content-language.size",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.geometry",
+           "version": "1.0"
+          },
+          "fill": {
+           "gradient": {
+            "stops": [
+             {
+              "color": {
+               "rgba": {
+                "red": 0.0,
+                "green": 0.0,
+                "blue": 0.0,
+                "alpha": 0.0,
+                "type_identifier": "com.apple.apps.content-language.color.rgba",
+                "version": "1.1"
+               },
+               "type_identifier": "com.apple.apps.content-language.color",
+               "version": "1.0"
+              },
+              "fraction": 0.0,
+              "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+              "version": "1.0"
+             },
+             {
+              "color": {
+               "rgba": {
+                "red": 0.0,
+                "green": 0.0,
+                "blue": 0.0,
+                "alpha": 0.85,
+                "type_identifier": "com.apple.apps.content-language.color.rgba",
+                "version": "1.1"
+               },
+               "type_identifier": "com.apple.apps.content-language.color",
+               "version": "1.0"
+              },
+              "fraction": 1.0,
+              "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+              "version": "1.0"
+             }
+            ],
+            "flavor": {
+             "linear": {
+              "angle": 270.0,
+              "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor.linear",
+              "version": "1.0"
+             },
+             "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.fill.gradient",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.fill",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.shape",
+          "version": "1.0",
+          "preset_identifier": "shape_base"
+         },
+         "type_identifier": "com.apple.apps.content-language.canvas-object",
+         "version": "1.0"
+        }
+       ],
+       "type_identifier": "com.apple.apps.content-language.group",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.canvas-object",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.slide-object",
+     "version": "1.0"
+    },
+    {
+     "object": {
+      "shape": {
+       "geometry": {
+        "position": {
+         "x": 175.0,
+         "y": 760.0,
+         "type_identifier": "com.apple.apps.content-language.position",
+         "version": "1.0"
+        },
+        "size": {
+         "width": 20.0,
+         "height": 20.0,
+         "type_identifier": "com.apple.apps.content-language.size",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.geometry",
+        "version": "1.0"
+       },
+       "path": {
+        "bezier": {
+         "path": "M 0.5,0 L 1,0.5 L 0.5,1 L 0,0.5 Z",
+         "space": {
+          "position": {
+           "x": 0.0,
+           "y": 0.0,
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0"
+          },
+          "size": {
+           "width": 1.0,
+           "height": 1.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.rect",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.path.bezier-path",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.path",
+        "version": "1.0"
+       },
+       "fill": {
+        "color": {
+         "rgba": {
+          "red": 0.412,
+          "green": 0.51,
+          "blue": 0.106,
+          "type_identifier": "com.apple.apps.content-language.color.rgba",
+          "version": "1.1"
+         },
+         "type_identifier": "com.apple.apps.content-language.color",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.fill",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.shape",
+       "version": "1.0",
+       "preset_identifier": "shape_base"
+      },
+      "type_identifier": "com.apple.apps.content-language.canvas-object",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.slide-object",
+     "version": "1.0"
+    },
+    {
+     "object": {
+      "textbox": {
+       "geometry": {
+        "position": {
+         "x": 130.0,
+         "y": 590.0,
+         "type_identifier": "com.apple.apps.content-language.position",
+         "version": "1.0"
+        },
+        "size": {
+         "width": 1700.0,
+         "height": 200.0,
+         "type_identifier": "com.apple.apps.content-language.size",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.geometry",
+        "version": "1.0"
+       },
+       "text": {
+        "paragraphs": [
+         {
+          "style": {
+           "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+           "version": "1.0",
+           "preset_identifier": "para_left"
+          },
+          "contents": [
+           {
+            "run": {
+             "string": "Kyoto",
+             "style": {
+              "type_identifier": "com.apple.apps.content-language.character-properties",
+              "version": "1.0",
+              "preset_identifier": "title_text"
+             },
+             "type_identifier": "com.apple.apps.content-language.text-run",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.paragraph",
+          "version": "1.0"
+         },
+         {
+          "style": {
+           "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+           "version": "1.0",
+           "preset_identifier": "para_left"
+          },
+          "contents": [
+           {
+            "run": {
+             "string": "Where old temples ",
+             "style": {
+              "type_identifier": "com.apple.apps.content-language.character-properties",
+              "version": "1.0",
+              "preset_identifier": "subtitle_text"
+             },
+             "type_identifier": "com.apple.apps.content-language.text-run",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+            "version": "1.0"
+           },
+           {
+            "run": {
+             "string": "meet quiet gardens.",
+             "style": {
+              "character_fill": {
+               "color": {
+                "rgba": {
+                 "red": 0.412,
+                 "green": 0.51,
+                 "blue": 0.106,
+                 "type_identifier": "com.apple.apps.content-language.color.rgba",
+                 "version": "1.1"
+                },
+                "type_identifier": "com.apple.apps.content-language.color",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.fill",
+               "version": "1.0"
+              },
+              "italic": true,
+              "type_identifier": "com.apple.apps.content-language.character-properties",
+              "version": "1.0",
+              "preset_identifier": "subtitle_text"
+             },
+             "type_identifier": "com.apple.apps.content-language.text-run",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.paragraph",
+          "version": "1.0"
+         }
+        ],
+        "type_identifier": "com.apple.apps.content-language.text",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.textbox",
+       "version": "1.0",
+       "preset_identifier": "textbox_base"
+      },
+      "type_identifier": "com.apple.apps.content-language.canvas-object",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.slide-object",
+     "version": "1.0"
+    },
+    {
+     "object": {
+      "textbox": {
+       "geometry": {
+        "position": {
+         "x": 130.0,
+         "y": 970.0,
+         "type_identifier": "com.apple.apps.content-language.position",
+         "version": "1.0"
+        },
+        "size": {
+         "width": 1660.0,
+         "height": 40.0,
+         "type_identifier": "com.apple.apps.content-language.size",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.geometry",
+        "version": "1.0"
+       },
+       "text": {
+        "paragraphs": [
+         {
+          "style": {
+           "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+           "version": "1.0",
+           "preset_identifier": "para_right"
+          },
+          "contents": [
+           {
+            "run": {
+             "string": "EST. 794  ·  THE ANCIENT CAPITAL",
+             "style": {
+              "character_fill": {
+               "color": {
+                "rgba": {
+                 "red": 0.96,
+                 "green": 0.94,
+                 "blue": 0.9,
+                 "type_identifier": "com.apple.apps.content-language.color.rgba",
+                 "version": "1.1"
+                },
+                "type_identifier": "com.apple.apps.content-language.color",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.fill",
+               "version": "1.0"
+              },
+              "font_size": 18.0,
+              "type_identifier": "com.apple.apps.content-language.character-properties",
+              "version": "1.0"
+             },
+             "type_identifier": "com.apple.apps.content-language.text-run",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.paragraph",
+          "version": "1.0"
+         }
+        ],
+        "type_identifier": "com.apple.apps.content-language.text",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.textbox",
+       "version": "1.0",
+       "preset_identifier": "textbox_base"
+      },
+      "type_identifier": "com.apple.apps.content-language.canvas-object",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.slide-object",
+     "version": "1.0"
+    }
+   ],
+   "background": {
+    "standard": {
+     "gradient": {
+      "stops": [
+       {
+        "color": {
+         "rgba": {
+          "red": 0.05,
+          "green": 0.06,
+          "blue": 0.1,
+          "type_identifier": "com.apple.apps.content-language.color.rgba",
+          "version": "1.1"
+         },
+         "type_identifier": "com.apple.apps.content-language.color",
+         "version": "1.0"
+        },
+        "fraction": 0.0,
+        "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+        "version": "1.0"
+       },
+       {
+        "color": {
+         "rgba": {
+          "red": 0.02,
+          "green": 0.03,
+          "blue": 0.05,
+          "type_identifier": "com.apple.apps.content-language.color.rgba",
+          "version": "1.1"
+         },
+         "type_identifier": "com.apple.apps.content-language.color",
+         "version": "1.0"
+        },
+        "fraction": 1.0,
+        "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+        "version": "1.0"
+       }
+      ],
+      "flavor": {
+       "radial": {
+        "start_point": {
+         "x": 960.0,
+         "y": 400.0,
+         "type_identifier": "com.apple.apps.content-language.position",
+         "version": "1.0"
+        },
+        "end_point": {
+         "x": 1920.0,
+         "y": 1080.0,
+         "type_identifier": "com.apple.apps.content-language.position",
+         "version": "1.0"
+        },
+        "base_natural_size": {
+         "width": 1920.0,
+         "height": 1080.0,
+         "type_identifier": "com.apple.apps.content-language.size",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor.radial",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.fill.gradient",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.fill",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.slide-background",
+    "version": "1.0"
+   },
+   "type_identifier": "com.apple.apps.content-language.slide",
+   "version": "1.0"
+  }
+ ],
+ "type_identifier": "com.apple.apps.content-language.presentation",
+ "version": "1.0"
+}

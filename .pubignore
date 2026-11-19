@@ -1,0 +1,7 @@
+# pub reads this file instead of .gitignore, so it repeats those entries.
+.dart_tool/
+pubspec.lock
+doc/api/
+__pycache__/
+*.pyc
+scratch/

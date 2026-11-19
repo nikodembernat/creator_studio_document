@@ -1,0 +1,8061 @@
+[
+ {
+  "name": "size floats",
+  "type": "Size",
+  "input": {
+   "width": 100.0,
+   "height": 50.5
+  },
+  "decode": "ok",
+  "fields_set": [
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 100.0,
+    "height": 50.5,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size ints become floats",
+  "type": "Size",
+  "input": {
+   "width": 100,
+   "height": 50
+  },
+  "decode": "ok",
+  "fields_set": [
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 100.0,
+    "height": 50.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size bool rejected",
+  "type": "Size",
+  "input": {
+   "width": true,
+   "height": 1.0
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "width"
+     ],
+     "float_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size string rejected",
+  "type": "Size",
+  "input": {
+   "width": "1",
+   "height": 1.0
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "width"
+     ],
+     "float_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size missing required",
+  "type": "Size",
+  "input": {
+   "width": 1.0
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "height"
+     ],
+     "missing"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size null required",
+  "type": "Size",
+  "input": {
+   "width": null,
+   "height": 1.0
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "width"
+     ],
+     "float_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size not an object",
+  "type": "Size",
+  "input": [
+   1,
+   2
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "model_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size string input",
+  "type": "Size",
+  "input": "big",
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "model_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "table int rejects float",
+  "type": "Table",
+  "input": {
+   "number_of_columns": 1.0,
+   "number_of_rows": 2
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "number_of_columns"
+     ],
+     "int_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "table int rejects bool",
+  "type": "Table",
+  "input": {
+   "number_of_columns": false,
+   "number_of_rows": 2
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "number_of_columns"
+     ],
+     "int_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "table ints",
+  "type": "Table",
+  "input": {
+   "number_of_columns": 3,
+   "number_of_rows": 2,
+   "default_column_width": 50
+  },
+  "decode": "ok",
+  "fields_set": [
+   "default_column_width",
+   "number_of_columns",
+   "number_of_rows"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "number_of_columns": 3,
+    "number_of_rows": 2,
+    "default_column_width": 50.0,
+    "type_identifier": "com.apple.apps.content-language.table",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "label bool rejects int",
+  "type": "Label",
+  "input": {
+   "is_visible": 1
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "is_visible"
+     ],
+     "bool_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape str rejects int",
+  "type": "Shape",
+  "input": {
+   "identifier": 5
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "identifier"
+     ],
+     "string_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape nested wrong type",
+  "type": "Shape",
+  "input": {
+   "geometry": "x"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "geometry"
+     ],
+     "model_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape nested missing",
+  "type": "Shape",
+  "input": {
+   "geometry": {
+    "position": {
+     "x": 1,
+     "y": 2
+    }
+   }
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "geometry",
+      "size"
+     ],
+     "missing"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "group children not list",
+  "type": "Group",
+  "input": {
+   "children": "x"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "children"
+     ],
+     "list_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "group children empty",
+  "type": "Group",
+  "input": {
+   "children": []
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "children"
+     ],
+     "too_short"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "group children item errors",
+  "type": "Group",
+  "input": {
+   "children": [
+    {
+     "shape": {}
+    },
+    5,
+    {
+     "shape": {
+      "identifier": 3
+     }
+    }
+   ]
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "children",
+      1
+     ],
+     "model_type"
+    ],
+    [
+     [
+      "children",
+      2,
+      "shape",
+      "identifier"
+     ],
+     "string_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "unequal columns too long",
+  "type": "UnequalColumnsDescription",
+  "input": {
+   "column_widths": [
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0,
+    10.0
+   ]
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "column_widths"
+     ],
+     "too_long"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "unequal columns ok",
+  "type": "UnequalColumnsDescription",
+  "input": {
+   "column_widths": [
+    10,
+    20.5
+   ],
+   "gutter_widths": [
+    1
+   ]
+  },
+  "decode": "ok",
+  "fields_set": [
+   "column_widths",
+   "gutter_widths"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "column_widths": [
+     10.0,
+     20.5
+    ],
+    "gutter_widths": [
+     1.0
+    ],
+    "type_identifier": "com.apple.apps.content-language.column-metrics.unequal-columns-description",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "unequal gutter too short",
+  "type": "UnequalColumnsDescription",
+  "input": {
+   "column_widths": [
+    10
+   ],
+   "gutter_widths": []
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "gutter_widths"
+     ],
+     "too_short"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "rgba bounds",
+  "type": "RGBA",
+  "input": {
+   "red": 5.0,
+   "green": -1,
+   "blue": 0.5,
+   "alpha": 1
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "green"
+     ],
+     "greater_than_equal"
+    ],
+    [
+     [
+      "red"
+     ],
+     "less_than_equal"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "rgba ok",
+  "type": "RGBA",
+  "input": {
+   "red": 1,
+   "green": 0.25,
+   "blue": 0,
+   "headroom": 2
+  },
+  "decode": "ok",
+  "fields_set": [
+   "blue",
+   "green",
+   "headroom",
+   "red"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "red": 1.0,
+    "green": 0.25,
+    "blue": 0.0,
+    "headroom": 2.0,
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "equal columns int bounds",
+  "type": "EqualColumnsDescription",
+  "input": {
+   "count": 11,
+   "gutter_width": 80
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "count"
+     ],
+     "less_than_equal"
+    ],
+    [
+     [
+      "gutter_width"
+     ],
+     "less_than_equal"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shadow drop bounds",
+  "type": "DropShadow",
+  "input": {
+   "angle": 400,
+   "radius": -1
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "angle"
+     ],
+     "less_than_equal"
+    ],
+    [
+     [
+      "radius"
+     ],
+     "greater_than_equal"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape enum wire string",
+  "type": "Shape",
+  "input": {
+   "head": "filled_arrow",
+   "tail": "open_circle"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "head",
+   "tail"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "tail": "open_circle",
+    "head": "filled_arrow",
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "shape enum unknown",
+  "type": "Shape",
+  "input": {
+   "head": "nope"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "head"
+     ],
+     "enum"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape enum int",
+  "type": "Shape",
+  "input": {
+   "head": 3
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "head"
+     ],
+     "enum"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "cell enum opt",
+  "type": "CellProperties",
+  "input": {
+   "vertical_alignment": "middle"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "vertical_alignment"
+     ],
+     "enum"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "paragraph override enum",
+  "type": "ParagraphProperties",
+  "input": {
+   "alignment": "center",
+   "decimal_tab": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "alignment",
+   "decimal_tab"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "alignment": "center",
+    "decimal_tab": null,
+    "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "paragraph override enum bad",
+  "type": "ParagraphProperties",
+  "input": {
+   "alignment": "sideways"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "alignment"
+     ],
+     "enum"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "tab stop enum",
+  "type": "TabStopType",
+  "input": {
+   "position": 1,
+   "kind": "decimal"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "kind",
+   "position"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "position": 1.0,
+    "kind": "decimal",
+    "type_identifier": "com.apple.apps.content-language.tab-stop-type",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "series list enum",
+  "type": "ChartSeries",
+  "input": {
+   "fill_reuse_rules": [
+    "fill_from_stroke"
+   ]
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "fill_reuse_rules",
+      0
+     ],
+     "enum"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape def null takes default",
+  "type": "Shape",
+  "input": {
+   "head": null,
+   "opacity": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "head",
+   "opacity"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "head": "none",
+    "opacity": 1.0,
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "shape def set to default",
+  "type": "Shape",
+  "input": {
+   "aspect_ratio_locked": false,
+   "opacity": 1
+  },
+  "decode": "ok",
+  "fields_set": [
+   "aspect_ratio_locked",
+   "opacity"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "aspect_ratio_locked": false,
+    "opacity": 1.0,
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "shape opt null not written",
+  "type": "Shape",
+  "input": {
+   "identifier": null,
+   "geometry": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "geometry",
+   "identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "cell override cleared",
+  "type": "CellProperties",
+  "input": {
+   "fill": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "fill"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "fill": null,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "cell override value",
+  "type": "CellProperties",
+  "input": {
+   "fill": {
+    "color": {
+     "rgba": {
+      "red": 0.5
+     }
+    }
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "fill"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "fill": {
+     "color": {
+      "rgba": {
+       "red": 0.5,
+       "type_identifier": "com.apple.apps.content-language.color.rgba",
+       "version": "1.1"
+      },
+      "type_identifier": "com.apple.apps.content-language.color",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.fill",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "cell override bad value",
+  "type": "CellProperties",
+  "input": {
+   "fill": {
+    "nope": {}
+   }
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "fill"
+     ],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "shape default model untouched",
+  "type": "Shape",
+  "input": {
+   "stroke": {
+    "line": {}
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "stroke"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "stroke": {
+     "line": {
+      "type_identifier": "com.apple.apps.content-language.stroke.line",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.stroke",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "shape default model changed",
+  "type": "Shape",
+  "input": {
+   "stroke": "empty"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "stroke"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "stroke": "empty",
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "image default union",
+  "type": "Image",
+  "input": {
+   "resource": {
+    "indirect": {
+     "filename": "a.png"
+    }
+   },
+   "stroke": "empty"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "resource",
+   "stroke"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "resource": {
+     "indirect": {
+      "filename": "a.png",
+      "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.resource",
+     "version": "1.0"
+    },
+    "stroke": "empty",
+    "type_identifier": "com.apple.apps.content-language.image",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size unknown keys in order",
+  "type": "Size",
+  "input": {
+   "zeta": 1,
+   "width": 1.0,
+   "alpha": {
+    "x": [
+     1,
+     2.5,
+     null
+    ]
+   },
+   "height": 2.0,
+   "type_identifier": "bogus"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "alpha",
+   "height",
+   "width",
+   "zeta"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0",
+    "zeta": 1,
+    "alpha": {
+     "x": [
+      1,
+      2.5,
+      null
+     ]
+    }
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "preset id null",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "preset_identifier": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "preset id wrong type",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "preset_identifier": 7
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "preset_identifier"
+     ],
+     "string_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size version map",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": {
+    "major": 1,
+    "minor": 0
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size version int",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": 1
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size version bad",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "1.x"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "size version null",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size version newer major",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "2.0"
+  },
+  "decode": {
+   "error": "DocumentVersionError",
+   "message": "Size: input declares version 2.0 but this library implements 1.x. Update this library to a newer version to read it."
+  },
+  "logs": []
+ },
+ {
+  "name": "size newer minor no extras",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "1.7"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size floor holds",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "1.7",
+   "depth": 3
+  },
+  "decode": "ok",
+  "fields_set": [
+   "depth",
+   "height",
+   "width"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.7",
+    "depth": 3
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size floor edited",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "1.7",
+   "depth": 3
+  },
+  "ops": [
+   {
+    "path": [],
+    "set": "width",
+    "json": 5
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "depth",
+   "height",
+   "width"
+  ],
+  "encode": {
+   "json": {
+    "width": 5.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0",
+    "depth": 3
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "Size: edited after decoding at 1.7. Its unknown keys ['depth'] are kept, but a newer reader ignores any that are newer than the version written."
+  ]
+ },
+ {
+  "name": "size floor touched",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "1.7",
+   "depth": 3
+  },
+  "ops": [
+   {
+    "path": [],
+    "touch": "width"
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "depth",
+   "height",
+   "width"
+  ],
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.7",
+    "depth": 3
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "size floor extra edited",
+  "type": "Size",
+  "input": {
+   "width": 1.0,
+   "height": 2.0,
+   "version": "1.7",
+   "depth": 3
+  },
+  "ops": [
+   {
+    "path": [],
+    "extra": "depth",
+    "json": 4
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "depth",
+   "height",
+   "width"
+  ],
+  "encode": {
+   "json": {
+    "width": 1.0,
+    "height": 2.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0",
+    "depth": 4
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "Size: edited after decoding at 1.7. Its unknown keys ['depth'] are kept, but a newer reader ignores any that are newer than the version written."
+  ]
+ },
+ {
+  "name": "indirect too new key dropped",
+  "type": "IndirectResource",
+  "input": {
+   "filename": "a.png",
+   "version": "1.0",
+   "premium_resource_info": {
+    "asset_uuid": "u",
+    "is_derived_asset": false,
+    "may_need_watermark": true
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "filename"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "filename": "a.png",
+    "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "IndirectResource.premium_resource_info: the key is newer than the version 1.0, so it decodes as its default.",
+   "IndirectResource.premium_resource_info: the key is newer than the version 1.0, so it decodes as its default."
+  ]
+ },
+ {
+  "name": "indirect new key kept",
+  "type": "IndirectResource",
+  "input": {
+   "filename": "a.png",
+   "version": "2.0",
+   "premium_resource_info": {
+    "asset_uuid": "u",
+    "is_derived_asset": false,
+    "may_need_watermark": true
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "filename",
+   "premium_resource_info"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "filename": "a.png",
+    "premium_resource_info": {
+     "asset_uuid": "u",
+     "is_derived_asset": false,
+     "may_need_watermark": true,
+     "type_identifier": "com.apple.apps.content-language.resource.premium-resource-info",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+    "version": "2.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "indirect unversioned new key",
+  "type": "IndirectResource",
+  "input": {
+   "filename": "a.png",
+   "premium_resource_info": {
+    "asset_uuid": "u",
+    "is_derived_asset": false,
+    "may_need_watermark": true
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "filename",
+   "premium_resource_info"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "filename": "a.png",
+    "premium_resource_info": {
+     "asset_uuid": "u",
+     "is_derived_asset": false,
+     "may_need_watermark": true,
+     "type_identifier": "com.apple.apps.content-language.resource.premium-resource-info",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+    "version": "2.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "rgba base version",
+  "type": "RGBA",
+  "input": {
+   "red": 0.5,
+   "version": "1.0"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "red"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "red": 0.5,
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "rgba headroom dropped",
+  "type": "RGBA",
+  "input": {
+   "red": 0.5,
+   "headroom": 4,
+   "version": "1.0"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "red"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "red": 0.5,
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "RGBA.headroom: the key is newer than the version 1.0, so it decodes as its default.",
+   "RGBA.headroom: the key is newer than the version 1.0, so it decodes as its default."
+  ]
+ },
+ {
+  "name": "nested newer major",
+  "type": "Shape",
+  "input": {
+   "geometry": {
+    "position": {
+     "x": 1,
+     "y": 2,
+     "version": "3.1"
+    },
+    "size": "x"
+   }
+  },
+  "decode": {
+   "error": "DocumentVersionError",
+   "message": "Position: input declares version 3.1 but this library implements 1.x. Update this library to a newer version to read it."
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke bare valueless",
+  "type": "Stroke",
+  "input": "empty",
+  "decode": "ok",
+  "fields_set": [
+   "empty"
+  ],
+  "union_cases": [
+   "empty"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": "empty"
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "stroke bare unknown",
+  "type": "Stroke",
+  "input": "dotted",
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke bare payload case",
+  "type": "Stroke",
+  "input": "line",
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke valueless null",
+  "type": "Stroke",
+  "input": {
+   "empty": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "empty"
+  ],
+  "union_cases": [
+   "empty"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": "empty"
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "stroke valueless true",
+  "type": "Stroke",
+  "input": {
+   "empty": true
+  },
+  "decode": "ok",
+  "fields_set": [
+   "empty"
+  ],
+  "union_cases": [
+   "empty"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": "empty"
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "stroke valueless false",
+  "type": "Stroke",
+  "input": {
+   "empty": false
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "empty"
+     ],
+     "literal_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke valueless object",
+  "type": "Stroke",
+  "input": {
+   "empty": {}
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "empty"
+     ],
+     "literal_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke two cases",
+  "type": "Stroke",
+  "input": {
+   "empty": null,
+   "line": {
+    "width": 2
+   }
+  },
+  "decode": "ok",
+  "fields_set": [
+   "empty",
+   "line"
+  ],
+  "union_cases": [
+   "empty",
+   "line"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "empty": null,
+    "line": {
+     "width": 2.0,
+     "type_identifier": "com.apple.apps.content-language.stroke.line",
+     "version": "1.0"
+    },
+    "primary_case": "empty",
+    "type_identifier": "com.apple.apps.content-language.stroke",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "stroke no case",
+  "type": "Stroke",
+  "input": {},
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke only unknown",
+  "type": "Stroke",
+  "input": {
+   "squiggle": {}
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke payload null",
+  "type": "Stroke",
+  "input": {
+   "line": null
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke payload null and case",
+  "type": "Stroke",
+  "input": {
+   "line": null,
+   "frame": {
+    "name": "chalkboard"
+   }
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "frame",
+      "name"
+     ],
+     "enum"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke int input",
+  "type": "Stroke",
+  "input": 5,
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "model_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke version too new",
+  "type": "Stroke",
+  "input": {
+   "empty": null,
+   "version": "2.0"
+  },
+  "decode": {
+   "error": "DocumentVersionError",
+   "message": "Stroke: input declares version 2.0 but this library implements 1.x. Update this library to a newer version to read it."
+  },
+  "logs": []
+ },
+ {
+  "name": "stroke valueless with extra",
+  "type": "Stroke",
+  "input": {
+   "empty": null,
+   "glow": 1
+  },
+  "decode": "ok",
+  "fields_set": [
+   "empty",
+   "glow"
+  ],
+  "union_cases": [
+   "empty"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "empty": null,
+    "glow": 1,
+    "primary_case": "empty",
+    "type_identifier": "com.apple.apps.content-language.stroke",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart one case",
+  "type": "Chart",
+  "input": {
+   "column": {}
+  },
+  "decode": "ok",
+  "fields_set": [
+   "column"
+  ],
+  "union_cases": [
+   "column"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart two cases newest",
+  "type": "Chart",
+  "input": {
+   "column": {},
+   "bar": {}
+  },
+  "decode": "ok",
+  "fields_set": [
+   "bar",
+   "column"
+  ],
+  "union_cases": [
+   "bar",
+   "column"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "bar": {
+     "type_identifier": "com.apple.apps.content-language.bar-chart",
+     "version": "1.0"
+    },
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "primary_case": "bar",
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart two cases primary",
+  "type": "Chart",
+  "input": {
+   "column": {},
+   "bar": {},
+   "primary_case": "column"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "bar",
+   "column"
+  ],
+  "union_cases": [
+   "column",
+   "bar"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "bar": {
+     "type_identifier": "com.apple.apps.content-language.bar-chart",
+     "version": "1.0"
+    },
+    "primary_case": "column",
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart primary not str",
+  "type": "Chart",
+  "input": {
+   "column": {},
+   "bar": {},
+   "primary_case": 3
+  },
+  "decode": "ok",
+  "fields_set": [
+   "bar",
+   "column"
+  ],
+  "union_cases": [
+   "bar",
+   "column"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "bar": {
+     "type_identifier": "com.apple.apps.content-language.bar-chart",
+     "version": "1.0"
+    },
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "primary_case": "bar",
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart primary missing case",
+  "type": "Chart",
+  "input": {
+   "column": {},
+   "primary_case": "bar"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "column"
+  ],
+  "union_cases": [
+   "column"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart unknown sibling",
+  "type": "Chart",
+  "input": {
+   "column": {},
+   "super_axis": {}
+  },
+  "decode": "ok",
+  "fields_set": [
+   "column",
+   "super_axis"
+  ],
+  "union_cases": [
+   "column"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "super_axis": {},
+    "primary_case": "column",
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "chart unknown primary",
+  "type": "Chart",
+  "input": {
+   "column": {},
+   "super_axis": {},
+   "primary_case": "super_axis"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "column",
+   "super_axis"
+  ],
+  "union_cases": [
+   "column"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "super_axis": {},
+    "column": {
+     "type_identifier": "com.apple.apps.content-language.column-chart",
+     "version": "1.0"
+    },
+    "primary_case": "super_axis",
+    "type_identifier": "com.apple.apps.content-language.chart",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "canvas newer case dropped",
+  "type": "CanvasObject",
+  "input": {
+   "audio": {},
+   "shape": {},
+   "version": "1.0"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "shape"
+  ],
+  "union_cases": [
+   "shape"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "CanvasObject.audio: the key is newer than the version 1.0, so it decodes as absent.",
+   "CanvasObject.audio: the key is newer than the version 1.0, so it decodes as absent."
+  ]
+ },
+ {
+  "name": "canvas only newer case",
+  "type": "CanvasObject",
+  "input": {
+   "audio": {},
+   "version": "1.0"
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [
+   "CanvasObject.audio: the key is newer than the version 1.0, so it decodes as absent."
+  ]
+ },
+ {
+  "name": "canvas newer primary dropped",
+  "type": "CanvasObject",
+  "input": {
+   "chart": {
+    "column": {}
+   },
+   "shape": {},
+   "version": "1.1",
+   "primary_case": "chart"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "shape"
+  ],
+  "union_cases": [
+   "shape"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "CanvasObject.chart: the key is newer than the version 1.1, so it decodes as absent.",
+   "CanvasObject.chart: the key is newer than the version 1.1, so it decodes as absent."
+  ]
+ },
+ {
+  "name": "canvas newest wins",
+  "type": "CanvasObject",
+  "input": {
+   "shape": {},
+   "textbox": {}
+  },
+  "decode": "ok",
+  "fields_set": [
+   "shape",
+   "textbox"
+  ],
+  "union_cases": [
+   "textbox",
+   "shape"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "textbox": {
+     "type_identifier": "com.apple.apps.content-language.textbox",
+     "version": "1.0"
+    },
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "primary_case": "textbox",
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.1"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "canvas version raised",
+  "type": "CanvasObject",
+  "input": {
+   "movie": {
+    "resource": "x"
+   }
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "movie",
+      "playback_options"
+     ],
+     "missing"
+    ],
+    [
+     [
+      "movie",
+      "resource"
+     ],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "canvas floor holds",
+  "type": "CanvasObject",
+  "input": {
+   "shape": {},
+   "hologram": {},
+   "version": "1.9"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "hologram",
+   "shape"
+  ],
+  "union_cases": [
+   "shape"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "hologram": {},
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.9"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "canvas floor edited",
+  "type": "CanvasObject",
+  "input": {
+   "shape": {},
+   "hologram": {},
+   "version": "1.9"
+  },
+  "ops": [
+   {
+    "path": [],
+    "set": "group",
+    "json": {
+     "children": [
+      {
+       "shape": {}
+      }
+     ]
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "hologram",
+   "shape"
+  ],
+  "union_cases": [
+   "shape"
+  ],
+  "encode": {
+   "json": {
+    "group": {
+     "children": [
+      {
+       "shape": {
+        "type_identifier": "com.apple.apps.content-language.shape",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.canvas-object",
+       "version": "1.0"
+      }
+     ],
+     "type_identifier": "com.apple.apps.content-language.group",
+     "version": "1.0"
+    },
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "hologram": {},
+    "primary_case": "group",
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [
+   "CanvasObject: edited after decoding at 1.9. Its unknown keys ['hologram'] are kept, but a newer reader ignores any that are newer than the version written."
+  ]
+ },
+ {
+  "name": "canvas floor primary kept",
+  "type": "CanvasObject",
+  "input": {
+   "shape": {},
+   "hologram": {},
+   "version": "1.9",
+   "primary_case": "shape"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "hologram",
+   "shape"
+  ],
+  "union_cases": [
+   "shape"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "hologram": {},
+    "primary_case": "shape",
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.9"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "canvas floor primary unknown",
+  "type": "CanvasObject",
+  "input": {
+   "shape": {},
+   "hologram": {},
+   "version": "1.9",
+   "primary_case": "hologram"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "hologram",
+   "shape"
+  ],
+  "union_cases": [
+   "shape"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "hologram": {},
+    "shape": {
+     "type_identifier": "com.apple.apps.content-language.shape",
+     "version": "1.0"
+    },
+    "primary_case": "hologram",
+    "type_identifier": "com.apple.apps.content-language.canvas-object",
+    "version": "1.9"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "shadow none valueless",
+  "type": "Shadow",
+  "input": "none",
+  "decode": "ok",
+  "fields_set": [
+   "none"
+  ],
+  "union_cases": [
+   "none"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": "none"
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "shadow version of none",
+  "type": "Shadow",
+  "input": {
+   "none": null,
+   "dropShadow": {}
+  },
+  "decode": "ok",
+  "fields_set": [
+   "dropShadow",
+   "none"
+  ],
+  "union_cases": [
+   "none",
+   "dropShadow"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "none": null,
+    "dropShadow": {
+     "type_identifier": "com.apple.apps.content-language.drop-shadow",
+     "version": "1.0"
+    },
+    "primary_case": "none",
+    "type_identifier": "com.apple.apps.content-language.shadow",
+    "version": "1.1"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "text primitive case",
+  "type": "Text",
+  "input": {
+   "string": "hello"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "string"
+  ],
+  "union_cases": [
+   "string"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "string": "hello",
+    "type_identifier": "com.apple.apps.content-language.text",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "text primitive wrong",
+  "type": "Text",
+  "input": {
+   "string": 5
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "string"
+     ],
+     "string_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "text list case",
+  "type": "Text",
+  "input": {
+   "text_runs": [
+    {
+     "string": "a"
+    }
+   ],
+   "string": "a"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "string",
+   "text_runs"
+  ],
+  "union_cases": [
+   "string",
+   "text_runs"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "string": "a",
+    "text_runs": [
+     {
+      "string": "a",
+      "type_identifier": "com.apple.apps.content-language.text-run",
+      "version": "1.0"
+     }
+    ],
+    "primary_case": "string",
+    "type_identifier": "com.apple.apps.content-language.text",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "duration float case",
+  "type": "Duration",
+  "input": {
+   "seconds": 3
+  },
+  "decode": "ok",
+  "fields_set": [
+   "seconds"
+  ],
+  "union_cases": [
+   "seconds"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "seconds": 3.0,
+    "type_identifier": "com.apple.apps.content-language.duration",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "value bool case",
+  "type": "UnformattedValue",
+  "input": {
+   "boolean": true
+  },
+  "decode": "ok",
+  "fields_set": [
+   "boolean"
+  ],
+  "union_cases": [
+   "boolean"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "boolean": true,
+    "type_identifier": "com.apple.apps.content-language.table.cell.unformatted-value",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "value bool case wrong",
+  "type": "UnformattedValue",
+  "input": {
+   "boolean": 1
+  },
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "boolean"
+     ],
+     "bool_type"
+    ]
+   ]
+  },
+  "logs": []
+ },
+ {
+  "name": "union preset id null",
+  "type": "Stroke",
+  "input": {
+   "empty": null,
+   "preset_identifier": null
+  },
+  "decode": "ok",
+  "fields_set": [
+   "empty"
+  ],
+  "union_cases": [
+   "empty"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": "empty"
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "union no case with preset id no registry",
+  "type": "Stroke",
+  "input": {
+   "preset_identifier": "p"
+  },
+  "encode_without_presets": true,
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [],
+  "redecode_equal": true,
+  "encode": {
+   "error": "EncodeError",
+   "message": "Error calling function `_wire_encode`: ValueError: Stroke: adopts preset 'p', so encoding needs the presets. Save through Package.save, or pass context={'wire_presets': registry}."
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "preset fill",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped"
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "wrapped"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset fill then edit",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped"
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "text_wrap",
+    "json": false
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "text_wrap": false,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "wrapped"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset fill then same value",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped"
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "text_wrap",
+    "json": true
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "wrapped"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset own value same",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped",
+   "text_wrap": true
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "text_wrap"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "wrapped"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset own value differs",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped",
+   "text_wrap": false
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "text_wrap"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "text_wrap": false,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "wrapped"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset own null over preset",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped",
+   "text_wrap": null
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "text_wrap"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "text_wrap": null,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "wrapped"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset missing",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "nope",
+   "text_wrap": true
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "text_wrap"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "text_wrap": true,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "nope"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": [
+   "missing preset 'nope'"
+  ]
+ },
+ {
+  "name": "preset missing parent",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "orphan"
+  },
+  "presets": [
+   {
+    "identifier": "orphan",
+    "parent_identifier": "gone",
+    "properties": {
+     "text_wrap": false
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "orphan"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": [
+   "missing preset 'gone'"
+  ]
+ },
+ {
+  "name": "preset cycle",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "a"
+  },
+  "presets": [
+   {
+    "identifier": "a",
+    "parent_identifier": "b",
+    "properties": {}
+   },
+   {
+    "identifier": "b",
+    "parent_identifier": "a",
+    "properties": {}
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset cycle nested",
+  "type": "Shape",
+  "input": {
+   "fill": {
+    "color": {
+     "rgba": {
+      "preset_identifier": "a"
+     }
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "a",
+    "parent_identifier": "b",
+    "properties": {}
+   },
+   {
+    "identifier": "b",
+    "parent_identifier": "a",
+    "properties": {}
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "fill",
+      "color",
+      "rgba"
+     ],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset no registry",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "error": "EncodeError",
+   "message": "Error calling function `_wire_after`: ValueError: CellProperties: adopts preset 'wrapped', so encoding needs the presets. Save through Package.save, or pass context={'wire_presets': registry}."
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "preset encode without registry",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "wrapped"
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "encode_without_presets": true,
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "error": "EncodeError",
+   "message": "Error calling function `_wire_after`: ValueError: CellProperties: adopts preset 'wrapped', so encoding needs the presets. Save through Package.save, or pass context={'wire_presets': registry}."
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset empty id",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "",
+   "text_wrap": true
+  },
+  "presets": [
+   {
+    "identifier": "base",
+    "properties": {
+     "text_wrap": true,
+     "vertical_alignment": "top"
+    }
+   },
+   {
+    "identifier": "wrapped",
+    "parent_identifier": "base",
+    "properties": {
+     "vertical_alignment": "middle"
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "text_wrap"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "text_wrap": true,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba fill",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "mid-red"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "mid-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba bad type skipped",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "bad-rgba"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "bad-rgba"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba constraint",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "loud"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "red"
+     ],
+     "less_than_equal"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba int to float",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "int-red"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "int-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba null",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "null-red"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "null-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba own int same",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "mid-red",
+   "red": 0.5
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "red"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "mid-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba own int json",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "int-red",
+   "red": 1.0
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier",
+   "red"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "int-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba set default",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "mid-red"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "red",
+    "json": 0.0
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "red": 0.0,
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "mid-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset rgba touch",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "mid-red"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "touch": "red"
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "mid-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset adopted later",
+  "type": "RGBA",
+  "input": {
+   "red": 0.5
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "preset_identifier": "mid-red"
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "red"
+  ],
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "mid-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset nested rgba",
+  "type": "Slide",
+  "input": {
+   "background": {
+    "standard": {
+     "color": {
+      "rgba": {
+       "preset_identifier": "mid-red"
+      }
+     }
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "background"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "background": {
+     "standard": {
+      "color": {
+       "rgba": {
+        "type_identifier": "com.apple.apps.content-language.color.rgba",
+        "version": "1.1",
+        "preset_identifier": "mid-red"
+       },
+       "type_identifier": "com.apple.apps.content-language.color",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.fill",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.slide-background",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.slide",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset strict skips gate",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "bad-rgba"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "strict": true,
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "red"
+     ],
+     "float_type"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset strict good",
+  "type": "RGBA",
+  "input": {
+   "preset_identifier": "mid-red"
+  },
+  "presets": [
+   {
+    "identifier": "mid-red",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "bad-rgba",
+    "properties": {
+     "red": "not-a-number"
+    }
+   },
+   {
+    "identifier": "loud",
+    "properties": {
+     "red": 5.0
+    }
+   },
+   {
+    "identifier": "int-red",
+    "properties": {
+     "red": 1
+    }
+   },
+   {
+    "identifier": "null-red",
+    "properties": {
+     "red": null
+    }
+   }
+  ],
+  "strict": true,
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.color.rgba",
+    "version": "1.1",
+    "preset_identifier": "mid-red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override clear",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "no-fill"
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "no-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override clear own null",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "no-fill",
+   "fill": null
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "fill",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "fill": null,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "no-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override clear own value",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "no-fill",
+   "fill": {
+    "color": {
+     "rgba": {
+      "red": 1
+     }
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "fill",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "fill": {
+     "color": {
+      "rgba": {
+       "red": 1.0,
+       "type_identifier": "com.apple.apps.content-language.color.rgba",
+       "version": "1.1"
+      },
+      "type_identifier": "com.apple.apps.content-language.color",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.fill",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "no-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override value",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "red-fill"
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "red-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override own same",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "red-fill",
+   "fill": {
+    "color": {
+     "rgba": {
+      "red": 1
+     }
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "fill",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "fill": {
+     "color": {
+      "rgba": {
+       "red": 1.0,
+       "type_identifier": "com.apple.apps.content-language.color.rgba",
+       "version": "1.1"
+      },
+      "type_identifier": "com.apple.apps.content-language.color",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.fill",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "red-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override own cleared",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "red-fill",
+   "fill": null
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "fill",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "fill": null,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "red-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override foreign",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "foreign-fill"
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "foreign-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override bad",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "bad-fill"
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "bad-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override edit nested",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "red-fill"
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [
+     "fill",
+     "color",
+     "rgba"
+    ],
+    "set": "green",
+    "json": 1
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "fill": {
+     "color": {
+      "rgba": {
+       "red": 1.0,
+       "green": 1.0,
+       "type_identifier": "com.apple.apps.content-language.color.rgba",
+       "version": "1.1"
+      },
+      "type_identifier": "com.apple.apps.content-language.color",
+      "version": "1.0"
+     },
+     "type_identifier": "com.apple.apps.content-language.fill",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "red-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset override cleared by edit",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "red-fill"
+  },
+  "presets": [
+   {
+    "identifier": "no-fill",
+    "properties": {
+     "fill": null
+    }
+   },
+   {
+    "identifier": "red-fill",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "red": 1
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "foreign-fill",
+    "properties": {
+     "fill": {
+      "type_identifier": "com.apple.apps.content-language.size",
+      "width": 1,
+      "height": 2
+     }
+    }
+   },
+   {
+    "identifier": "bad-fill",
+    "properties": {
+     "fill": {
+      "nope": {}
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "fill",
+    "json": null
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "fill": null,
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "red-fill"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset def null skipped",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "null-head"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "null-head"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset def values",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "arrow-head"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "arrow-head"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset def own same",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "arrow-head",
+   "head": "filled_arrow",
+   "opacity": 0.5
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "head",
+   "opacity",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "arrow-head"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset def edit to default",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "arrow-head"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "head",
+    "json": "none"
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "head": "none",
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "arrow-head"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset projected key",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "proj"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "proj"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset unknown key",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "unknown-key"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "unknown-key"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset nested model",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "geom"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "geom"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset nested newer major opt",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "new-geom"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "new-geom"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset opt null over preset",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "caption",
+   "caption": null
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "caption",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "caption": null,
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "caption"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset opt set null over preset",
+  "type": "Shape",
+  "input": {
+   "preset_identifier": "caption"
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "caption",
+    "json": null
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "encode": {
+   "json": {
+    "caption": null,
+    "type_identifier": "com.apple.apps.content-language.shape",
+    "version": "1.0",
+    "preset_identifier": "caption"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset req newer major",
+  "type": "Geometry",
+  "input": {
+   "preset_identifier": "new-pos"
+  },
+  "presets": [
+   {
+    "identifier": "new-pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2,
+      "version": "4.0"
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   },
+   {
+    "identifier": "pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "DocumentVersionError",
+   "message": "Position: input declares version 4.0 but this library implements 1.x. Update this library to a newer version to read it."
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset req filled",
+  "type": "Geometry",
+  "input": {
+   "preset_identifier": "pos"
+  },
+  "presets": [
+   {
+    "identifier": "new-pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2,
+      "version": "4.0"
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   },
+   {
+    "identifier": "pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.geometry",
+    "version": "1.0",
+    "preset_identifier": "pos"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset req own same",
+  "type": "Geometry",
+  "input": {
+   "preset_identifier": "pos",
+   "size": {
+    "width": 1,
+    "height": 1
+   }
+  },
+  "presets": [
+   {
+    "identifier": "new-pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2,
+      "version": "4.0"
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   },
+   {
+    "identifier": "pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier",
+   "size"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "size": {
+     "width": 1.0,
+     "height": 1.0,
+     "type_identifier": "com.apple.apps.content-language.size",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.geometry",
+    "version": "1.0",
+    "preset_identifier": "pos"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset req own differs",
+  "type": "Geometry",
+  "input": {
+   "preset_identifier": "pos",
+   "size": {
+    "width": 1,
+    "height": 5
+   }
+  },
+  "presets": [
+   {
+    "identifier": "new-pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2,
+      "version": "4.0"
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   },
+   {
+    "identifier": "pos",
+    "properties": {
+     "position": {
+      "x": 1,
+      "y": 2
+     },
+     "size": {
+      "width": 1,
+      "height": 1
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier",
+   "size"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "size": {
+     "width": 1.0,
+     "height": 5.0,
+     "type_identifier": "com.apple.apps.content-language.size",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.geometry",
+    "version": "1.0",
+    "preset_identifier": "pos"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset supplies case",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset own same",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red",
+   "color": {
+    "rgba": {
+     "red": 1
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "color",
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "color": {
+     "rgba": {
+      "red": 1.0,
+      "type_identifier": "com.apple.apps.content-language.color.rgba",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.color",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset own differs",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red",
+   "color": {
+    "rgba": {
+     "red": 0
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "color",
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "color": {
+     "rgba": {
+      "red": 0.0,
+      "type_identifier": "com.apple.apps.content-language.color.rgba",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.color",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset own other case",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red",
+   "image": {
+    "technique": "tile",
+    "image": {
+     "indirect": {
+      "filename": "a.png"
+     }
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "image",
+      "resource"
+     ],
+     "missing"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset two cases",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "two"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "two"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset two cases designated",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "two",
+   "primary_case": "gradient"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "two"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset bad",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "bad"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset newer",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "newer"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "DocumentVersionError",
+   "message": "Color: input declares version 7.0 but this library implements 1.x. Update this library to a newer version to read it."
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset supplies nothing",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "empty"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset missing",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "nope"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": [
+   "missing preset 'nope'"
+  ]
+ },
+ {
+  "name": "union preset null case",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red",
+   "color": null
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [],
+     "value_error"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset null case and other",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red",
+   "color": null,
+   "gradient": {
+    "stops": [],
+    "flavor": {
+     "linear": {}
+    }
+   }
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "gradient",
+      "flavor",
+      "linear",
+      "angle"
+     ],
+     "missing"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset valueless not supplied",
+  "type": "Stroke",
+  "input": {
+   "preset_identifier": "stroke"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "line"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.stroke",
+    "version": "1.0",
+    "preset_identifier": "stroke"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset edit case",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [
+     "color",
+     "rgba"
+    ],
+    "set": "red",
+    "json": 0.25
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "encode": {
+   "json": {
+    "color": {
+     "rgba": {
+      "red": 0.25,
+      "type_identifier": "com.apple.apps.content-language.color.rgba",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.color",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset set case null",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "set": "color",
+    "json": null
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "encode": {
+   "error": "EncodeError",
+   "message": "Error calling function `_wire_encode`: ValueError: Fill: can't encode with no case set: the value sets 'color' to None over preset 'red'"
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset touch case",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "ops": [
+   {
+    "path": [],
+    "touch": "color"
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "encode": {
+   "json": {
+    "color": {
+     "rgba": {
+      "red": 1.0,
+      "type_identifier": "com.apple.apps.content-language.color.rgba",
+      "version": "1.1"
+     },
+     "type_identifier": "com.apple.apps.content-language.color",
+     "version": "1.0"
+    },
+    "type_identifier": "com.apple.apps.content-language.fill",
+    "version": "1.0",
+    "preset_identifier": "red"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "union preset no registry",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red"
+  },
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [],
+  "redecode_equal": true,
+  "encode": {
+   "error": "EncodeError",
+   "message": "Error calling function `_wire_encode`: ValueError: Fill: adopts preset 'red', so encoding needs the presets. Save through Package.save, or pass context={'wire_presets': registry}."
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": []
+ },
+ {
+  "name": "union preset no registry encode",
+  "type": "Fill",
+  "input": {
+   "preset_identifier": "red"
+  },
+  "presets": [
+   {
+    "identifier": "red",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     }
+    }
+   },
+   {
+    "identifier": "two",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      }
+     },
+     "gradient": {
+      "stops": [],
+      "flavor": {
+       "linear": {}
+      }
+     }
+    }
+   },
+   {
+    "identifier": "bad",
+    "properties": {
+     "color": 5
+    }
+   },
+   {
+    "identifier": "newer",
+    "properties": {
+     "color": {
+      "rgba": {
+       "red": 1
+      },
+      "version": "7.0"
+     }
+    }
+   },
+   {
+    "identifier": "empty",
+    "properties": {}
+   },
+   {
+    "identifier": "stroke",
+    "properties": {
+     "empty": null,
+     "line": {
+      "width": 3
+     }
+    }
+   }
+  ],
+  "encode_without_presets": true,
+  "decode": "ok",
+  "fields_set": [
+   "preset_identifier"
+  ],
+  "union_cases": [
+   "color"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "error": "EncodeError",
+   "message": "Error calling function `_wire_encode`: ValueError: Fill: adopts preset 'red', so encoding needs the presets. Save through Package.save, or pass context={'wire_presets': registry}."
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset nested adoption",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "d0"
+  },
+  "presets": [
+   {
+    "identifier": "d0",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r0"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d1",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r1"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d2",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r2"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d3",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r3"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d4",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r4"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d5",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r5"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "r0",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r1",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r2",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r3",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r4",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r5",
+    "properties": {
+     "red": "bad"
+    }
+   },
+   {
+    "identifier": "chain0",
+    "properties": {
+     "fill": {
+      "preset_identifier": "chain1"
+     }
+    }
+   },
+   {
+    "identifier": "chain1",
+    "properties": {
+     "color": {
+      "preset_identifier": "chain2"
+     }
+    }
+   },
+   {
+    "identifier": "chain2",
+    "properties": {
+     "rgba": {
+      "preset_identifier": "chain3"
+     }
+    }
+   },
+   {
+    "identifier": "chain3",
+    "properties": {
+     "red": "bad",
+     "green": 0.5
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "d0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset nested adoption bad",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "d5"
+  },
+  "presets": [
+   {
+    "identifier": "d0",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r0"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d1",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r1"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d2",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r2"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d3",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r3"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d4",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r4"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d5",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r5"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "r0",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r1",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r2",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r3",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r4",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r5",
+    "properties": {
+     "red": "bad"
+    }
+   },
+   {
+    "identifier": "chain0",
+    "properties": {
+     "fill": {
+      "preset_identifier": "chain1"
+     }
+    }
+   },
+   {
+    "identifier": "chain1",
+    "properties": {
+     "color": {
+      "preset_identifier": "chain2"
+     }
+    }
+   },
+   {
+    "identifier": "chain2",
+    "properties": {
+     "rgba": {
+      "preset_identifier": "chain3"
+     }
+    }
+   },
+   {
+    "identifier": "chain3",
+    "properties": {
+     "red": "bad",
+     "green": 0.5
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "d5"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset gate depth",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "chain0"
+  },
+  "presets": [
+   {
+    "identifier": "d0",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r0"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d1",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r1"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d2",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r2"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d3",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r3"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d4",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r4"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d5",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r5"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "r0",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r1",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r2",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r3",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r4",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r5",
+    "properties": {
+     "red": "bad"
+    }
+   },
+   {
+    "identifier": "chain0",
+    "properties": {
+     "fill": {
+      "preset_identifier": "chain1"
+     }
+    }
+   },
+   {
+    "identifier": "chain1",
+    "properties": {
+     "color": {
+      "preset_identifier": "chain2"
+     }
+    }
+   },
+   {
+    "identifier": "chain2",
+    "properties": {
+     "rgba": {
+      "preset_identifier": "chain3"
+     }
+    }
+   },
+   {
+    "identifier": "chain3",
+    "properties": {
+     "red": "bad",
+     "green": 0.5
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "\u0000wire_filled",
+   "preset_identifier"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "type_identifier": "com.apple.apps.content-language.table.cell-properties",
+    "version": "1.0",
+    "preset_identifier": "chain0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset gate depth strict",
+  "type": "CellProperties",
+  "input": {
+   "preset_identifier": "chain0"
+  },
+  "presets": [
+   {
+    "identifier": "d0",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r0"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d1",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r1"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d2",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r2"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d3",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r3"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d4",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r4"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "d5",
+    "properties": {
+     "fill": {
+      "color": {
+       "rgba": {
+        "preset_identifier": "r5"
+       }
+      }
+     }
+    }
+   },
+   {
+    "identifier": "r0",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r1",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r2",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r3",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r4",
+    "properties": {
+     "red": 0.5
+    }
+   },
+   {
+    "identifier": "r5",
+    "properties": {
+     "red": "bad"
+    }
+   },
+   {
+    "identifier": "chain0",
+    "properties": {
+     "fill": {
+      "preset_identifier": "chain1"
+     }
+    }
+   },
+   {
+    "identifier": "chain1",
+    "properties": {
+     "color": {
+      "preset_identifier": "chain2"
+     }
+    }
+   },
+   {
+    "identifier": "chain2",
+    "properties": {
+     "rgba": {
+      "preset_identifier": "chain3"
+     }
+    }
+   },
+   {
+    "identifier": "chain3",
+    "properties": {
+     "red": "bad",
+     "green": 0.5
+    }
+   }
+  ],
+  "strict": true,
+  "decode": {
+   "error": "ModelValidationError",
+   "issues": [
+    [
+     [
+      "fill",
+      "color",
+      "rgba",
+      "red"
+     ],
+     "float_type"
+    ]
+   ]
+  },
+  "logs": [],
+  "registry_warnings": []
+ },
+ {
+  "name": "preset many adopters share memo",
+  "type": "Slide",
+  "input": {
+   "contents": [
+    {
+     "object": {
+      "shape": {
+       "preset_identifier": "arrow-head"
+      }
+     }
+    },
+    {
+     "object": {
+      "shape": {
+       "preset_identifier": "arrow-head",
+       "head": "line"
+      }
+     }
+    },
+    {
+     "object": {
+      "shape": {
+       "preset_identifier": "null-head"
+      }
+     }
+    }
+   ]
+  },
+  "presets": [
+   {
+    "identifier": "null-head",
+    "properties": {
+     "head": null
+    }
+   },
+   {
+    "identifier": "arrow-head",
+    "properties": {
+     "head": "filled_arrow",
+     "opacity": 0.5,
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "proj",
+    "properties": {
+     "paragraph_properties": {
+      "type_identifier": "paragraph-properties",
+      "version": "1.0"
+     }
+    }
+   },
+   {
+    "identifier": "unknown-key",
+    "properties": {
+     "not_a_shape_field": 1
+    }
+   },
+   {
+    "identifier": "geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "new-geom",
+    "properties": {
+     "geometry": {
+      "position": {
+       "x": 1,
+       "y": 2,
+       "version": "9.0"
+      },
+      "size": {
+       "width": 3,
+       "height": 4
+      }
+     }
+    }
+   },
+   {
+    "identifier": "caption",
+    "properties": {
+     "caption": {
+      "is_visible": false
+     }
+    }
+   }
+  ],
+  "decode": "ok",
+  "fields_set": [
+   "contents"
+  ],
+  "redecode_equal": true,
+  "encode": {
+   "json": {
+    "contents": [
+     {
+      "object": {
+       "shape": {
+        "type_identifier": "com.apple.apps.content-language.shape",
+        "version": "1.0",
+        "preset_identifier": "arrow-head"
+       },
+       "type_identifier": "com.apple.apps.content-language.canvas-object",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.slide-object",
+      "version": "1.0"
+     },
+     {
+      "object": {
+       "shape": {
+        "head": "line",
+        "type_identifier": "com.apple.apps.content-language.shape",
+        "version": "1.0",
+        "preset_identifier": "arrow-head"
+       },
+       "type_identifier": "com.apple.apps.content-language.canvas-object",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.slide-object",
+      "version": "1.0"
+     },
+     {
+      "object": {
+       "shape": {
+        "type_identifier": "com.apple.apps.content-language.shape",
+        "version": "1.0",
+        "preset_identifier": "null-head"
+       },
+       "type_identifier": "com.apple.apps.content-language.canvas-object",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.slide-object",
+      "version": "1.0"
+     }
+    ],
+    "type_identifier": "com.apple.apps.content-language.slide",
+    "version": "1.0"
+   }
+  },
+  "copy_equal": true,
+  "copy_encode_same": true,
+  "logs": [],
+  "registry_warnings": []
+ }
+]

@@ -1,0 +1,2869 @@
+{
+ "cases": {
+  "bad_cd_magic.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "bad_crc_data.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "save_error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "bad_crc_main.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "bad_main_json.keyx": {
+   "lazy": {
+    "error": "malformed_json"
+   },
+   "open": {
+    "error": "malformed_json"
+   }
+  },
+  "bzip2.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "corrupt_deflate_main.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "corrupt_extra.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "cp437_name.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "cé.png!",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/cé.png!": "4fbd7f10:4",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "cé.png!",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/cé.png!": "4fbd7f10:4",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "data_nested.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png",
+     "ok 2.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "Data/ok 2.png": "79dcdd47:2",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png",
+     "ok 2.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "Data/ok 2.png": "79dcdd47:2",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "dotslash.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "dup_entries.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "dup.png",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/dup.png": "b61f1169:6",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "dup.png",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/dup.png": "b61f1169:6",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "empty_file.keyx": {
+   "lazy": {
+    "error": "not_a_package"
+   },
+   "open": {
+    "error": "not_a_package"
+   }
+  },
+  "empty_member.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "empty.png",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/empty.png": "00000000:0",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "empty.png",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/empty.png": "00000000:0",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "empty_zip.keyx": {
+   "lazy": {
+    "error": "missing_main_file"
+   },
+   "open": {
+    "error": "missing_main_file"
+   }
+  },
+  "encrypted_flag.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "extract_version.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "local_header_only.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "local_name_mismatch.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "abc.png",
+     "hero.png"
+    ],
+    "save_error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "lzma.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "macosx_root.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "main_bad_utf8.keyx": {
+   "lazy": {
+    "error": "malformed_json"
+   },
+   "open": {
+    "error": "malformed_json"
+   }
+  },
+  "main_bigint_digits.keyx": {
+   "lazy": {
+    "error": "malformed_json"
+   },
+   "open": {
+    "error": "malformed_json"
+   }
+  },
+  "main_lone_surrogate_escape.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "save_error": "UnicodeEncodeError"
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "save_error": "UnicodeEncodeError"
+   }
+  },
+  "main_not_object.keyx": {
+   "lazy": {
+    "error": "ValidationError"
+   },
+   "open": {
+    "error": "ValidationError"
+   }
+  },
+  "manifest_bad_json.keyx": {
+   "lazy": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "manifest_bool.keyx": {
+   "lazy": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "manifest_dict_major2.keyx": {
+   "lazy": {
+    "error": "DocumentVersionError"
+   },
+   "open": {
+    "error": "DocumentVersionError"
+   }
+  },
+  "manifest_garbage.keyx": {
+   "lazy": {
+    "manifest": "banana",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "banana",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "manifest_major2.keyx": {
+   "lazy": {
+    "error": "DocumentVersionError"
+   },
+   "open": {
+    "error": "DocumentVersionError"
+   }
+  },
+  "manifest_not_object.keyx": {
+   "lazy": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "manifest_number1.keyx": {
+   "lazy": {
+    "manifest": "1",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "manifest_number2.keyx": {
+   "lazy": {
+    "error": "DocumentVersionError"
+   },
+   "open": {
+    "error": "DocumentVersionError"
+   }
+  },
+  "missing_main.keyx": {
+   "lazy": {
+    "error": "missing_main_file"
+   },
+   "open": {
+    "error": "missing_main_file"
+   }
+  },
+  "missing_manifest.keyx": {
+   "lazy": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": null,
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "missing_presets.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "0d4cbb29:2"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "0d4cbb29:2"
+    }
+   }
+  },
+  "multidisk.keyx": {
+   "lazy": {
+    "error": "BadZipFile"
+   },
+   "open": {
+    "error": "BadZipFile"
+   }
+  },
+  "nan_extras.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "6a263711:10901",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "6a263711:10901",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "negative_header_offset.keyx": {
+   "lazy": {
+    "error": "OSError"
+   },
+   "open": {
+    "error": "OSError"
+   }
+  },
+  "nested_bad_crc.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "nested_root.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "nested_root_macosx.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "not_a_zip.keyx": {
+   "lazy": {
+    "error": "not_a_package"
+   },
+   "open": {
+    "error": "not_a_package"
+   }
+  },
+  "ok_plain.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "prepended.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "presets_cycle_reached.keyx": {
+   "lazy": {
+    "error": "malformed_presets"
+   },
+   "open": {
+    "error": "malformed_presets"
+   }
+  },
+  "presets_cycle_unreached.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base",
+     "cy-a",
+     "cy-b"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "a44195ae:1247"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base",
+     "cy-a",
+     "cy-b"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "a44195ae:1247"
+    }
+   }
+  },
+  "presets_junk_entries.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "presets_no_properties.keyx": {
+   "lazy": {
+    "error": "malformed_presets"
+   },
+   "open": {
+    "error": "malformed_presets"
+   }
+  },
+  "presets_not_array.keyx": {
+   "lazy": {
+    "error": "malformed_presets"
+   },
+   "open": {
+    "error": "malformed_presets"
+   }
+  },
+  "presets_not_json.keyx": {
+   "lazy": {
+    "error": "malformed_presets"
+   },
+   "open": {
+    "error": "malformed_presets"
+   }
+  },
+  "presets_recursion_loop.keyx": {
+   "lazy": {
+    "error": "malformed_presets"
+   },
+   "open": {
+    "error": "malformed_presets"
+   }
+  },
+  "stored.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "tiny.keyx": {
+   "lazy": {
+    "error": "not_a_package"
+   },
+   "open": {
+    "error": "not_a_package"
+   }
+  },
+  "truncated_half.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "truncated_tail.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "two_roots.keyx": {
+   "lazy": {
+    "error": "missing_main_file"
+   },
+   "open": {
+    "error": "missing_main_file"
+   }
+  },
+  "unicode_path.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png",
+     "ünicode.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "Data/ünicode.png": "626bec7c:3",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png",
+     "ünicode.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "Data/ünicode.png": "626bec7c:3",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "unsupported_method.keyx": {
+   "lazy": {
+    "error": "malformed_archive"
+   },
+   "open": {
+    "error": "malformed_archive"
+   }
+  },
+  "utf16_presets.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "utf32le_main.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "utf8_bom_main.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "utf8_name_no_flag.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "cé.png",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/cé.png": "4fbd7f10:4",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "cé.png",
+     "hero.png"
+    ],
+    "saved": {
+     "Data/cé.png": "4fbd7f10:4",
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  },
+  "with_comment.keyx": {
+   "lazy": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   },
+   "open": {
+    "manifest": "1.0",
+    "presets": [
+     "base_text",
+     "title_text",
+     "subtitle_text",
+     "para_left",
+     "para_right",
+     "textbox_base",
+     "shape_base"
+    ],
+    "resources": [
+     "hero.png"
+    ],
+    "saved": {
+     "Data/hero.png": "4dde0c3b:70",
+     "main.json": "a930a13a:10873",
+     "manifest.json": "1fd3e4f1:25",
+     "presets.json": "56a818b2:1117"
+    }
+   }
+  }
+ },
+ "parts": {
+  "0d4cbb29:2": [],
+  "1fd3e4f1:25": {
+   "package_version": "1.0"
+  },
+  "56a818b2:1117": [
+   {
+    "identifier": "base_text",
+    "properties": {
+     "font_name": "Helvetica Neue",
+     "tracking": 0.0
+    }
+   },
+   {
+    "identifier": "title_text",
+    "parent_identifier": "base_text",
+    "properties": {
+     "bold": true,
+     "character_fill": {
+      "color": {
+       "rgba": {
+        "blue": 0.9,
+        "green": 0.94,
+        "red": 0.96,
+        "type_identifier": "com.apple.apps.content-language.color.rgba",
+        "version": "1.1"
+       }
+      }
+     },
+     "font_name": "Didot",
+     "font_size": 96
+    }
+   },
+   {
+    "identifier": "subtitle_text",
+    "parent_identifier": "base_text",
+    "properties": {
+     "character_fill": {
+      "color": {
+       "rgba": {
+        "blue": 0.9,
+        "green": 0.94,
+        "red": 0.96,
+        "type_identifier": "com.apple.apps.content-language.color.rgba",
+        "version": "1.1"
+       }
+      }
+     },
+     "font_name": "Helvetica Neue Light",
+     "font_size": 32
+    }
+   },
+   {
+    "identifier": "para_left",
+    "properties": {
+     "alignment": "left",
+     "line_spacing": {
+      "kind": "relative",
+      "value": 1.0
+     }
+    }
+   },
+   {
+    "identifier": "para_right",
+    "properties": {
+     "alignment": "right",
+     "line_spacing": {
+      "kind": "relative",
+      "value": 1.0
+     }
+    }
+   },
+   {
+    "identifier": "textbox_base",
+    "properties": {
+     "layout_properties": {
+      "padding": {
+       "bottom": 0,
+       "left": 0,
+       "right": 0,
+       "top": 0
+      },
+      "shrink_to_fit": true,
+      "vertical_alignment": "top"
+     },
+     "shadow": "none",
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "shape_base",
+    "properties": {
+     "stroke": "empty"
+    }
+   }
+  ],
+  "6a263711:10901": {
+   "slide_size": {
+    "height": 1080.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0",
+    "width": 1920.0
+   },
+   "slides": [
+    {
+     "background": {
+      "standard": {
+       "gradient": {
+        "flavor": {
+         "radial": {
+          "base_natural_size": {
+           "height": 1080.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 1920.0
+          },
+          "end_point": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 1920.0,
+           "y": 1080.0
+          },
+          "start_point": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 960.0,
+           "y": 400.0
+          },
+          "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor.radial",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor",
+         "version": "1.0"
+        },
+        "stops": [
+         {
+          "color": {
+           "rgba": {
+            "blue": 0.1,
+            "green": 0.06,
+            "red": 0.05,
+            "type_identifier": "com.apple.apps.content-language.color.rgba",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.color",
+           "version": "1.0"
+          },
+          "fraction": 0.0,
+          "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+          "version": "1.0"
+         },
+         {
+          "color": {
+           "rgba": {
+            "blue": 0.05,
+            "green": 0.03,
+            "red": 0.02,
+            "type_identifier": "com.apple.apps.content-language.color.rgba",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.color",
+           "version": "1.0"
+          },
+          "fraction": 1.0,
+          "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+          "version": "1.0"
+         }
+        ],
+        "type_identifier": "com.apple.apps.content-language.fill.gradient",
+        "version": "1.1"
+       },
+       "type_identifier": "com.apple.apps.content-language.fill",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.slide-background",
+      "version": "1.0"
+     },
+     "contents": [
+      {
+       "object": {
+        "group": {
+         "caption": {
+          "is_visible": false,
+          "text": {
+           "string": "hidden caption; kept for round-trip",
+           "type_identifier": "com.apple.apps.content-language.text",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.label",
+          "version": "1.0"
+         },
+         "children": [
+          {
+           "image": {
+            "geometry": {
+             "position": {
+              "type_identifier": "com.apple.apps.content-language.position",
+              "version": "1.0",
+              "x": 0.0,
+              "y": 0.0
+             },
+             "size": {
+              "height": 600.0,
+              "type_identifier": "com.apple.apps.content-language.size",
+              "version": "1.0",
+              "width": 1920.0
+             },
+             "type_identifier": "com.apple.apps.content-language.geometry",
+             "version": "1.0"
+            },
+            "resource": {
+             "indirect": {
+              "filename": "hero.png",
+              "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+              "version": "1.0"
+             },
+             "type_identifier": "com.apple.apps.content-language.resource",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.image",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.canvas-object",
+           "version": "1.0"
+          },
+          {
+           "shape": {
+            "fill": {
+             "gradient": {
+              "flavor": {
+               "linear": {
+                "angle": 270.0,
+                "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor.linear",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor",
+               "version": "1.0"
+              },
+              "stops": [
+               {
+                "color": {
+                 "rgba": {
+                  "alpha": 0.0,
+                  "blue": 0.0,
+                  "green": 0.0,
+                  "red": 0.0,
+                  "type_identifier": "com.apple.apps.content-language.color.rgba",
+                  "version": "1.1"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.color",
+                 "version": "1.0"
+                },
+                "fraction": 0.0,
+                "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+                "version": "1.0"
+               },
+               {
+                "color": {
+                 "rgba": {
+                  "alpha": 0.85,
+                  "blue": 0.0,
+                  "green": 0.0,
+                  "red": 0.0,
+                  "type_identifier": "com.apple.apps.content-language.color.rgba",
+                  "version": "1.1"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.color",
+                 "version": "1.0"
+                },
+                "fraction": 1.0,
+                "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+                "version": "1.0"
+               }
+              ],
+              "type_identifier": "com.apple.apps.content-language.fill.gradient",
+              "version": "1.1"
+             },
+             "type_identifier": "com.apple.apps.content-language.fill",
+             "version": "1.0"
+            },
+            "geometry": {
+             "position": {
+              "type_identifier": "com.apple.apps.content-language.position",
+              "version": "1.0",
+              "x": 0.0,
+              "y": 350.0
+             },
+             "size": {
+              "height": 350.0,
+              "type_identifier": "com.apple.apps.content-language.size",
+              "version": "1.0",
+              "width": 1920.0
+             },
+             "type_identifier": "com.apple.apps.content-language.geometry",
+             "version": "1.0"
+            },
+            "preset_identifier": "shape_base",
+            "type_identifier": "com.apple.apps.content-language.shape",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.canvas-object",
+           "version": "1.0"
+          }
+         ],
+         "title": {
+          "paragraph_properties": {
+           "alignment": "center",
+           "character_properties": {
+            "character_fill": {
+             "color": {
+              "rgba": {
+               "blue": 0.9,
+               "green": 0.94,
+               "red": 0.96,
+               "type_identifier": "com.apple.apps.content-language.color.rgba",
+               "version": "1.1"
+              },
+              "type_identifier": "com.apple.apps.content-language.color",
+              "version": "1.0"
+             },
+             "type_identifier": "com.apple.apps.content-language.fill",
+             "version": "1.0"
+            },
+            "font_size": 14.0,
+            "type_identifier": "com.apple.apps.content-language.character-properties",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+           "version": "1.0"
+          },
+          "text": {
+           "string": "Hero",
+           "type_identifier": "com.apple.apps.content-language.text",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.label",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.group",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      },
+      {
+       "object": {
+        "shape": {
+         "fill": {
+          "color": {
+           "rgba": {
+            "blue": 0.106,
+            "green": 0.51,
+            "red": 0.412,
+            "type_identifier": "com.apple.apps.content-language.color.rgba",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.color",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.fill",
+          "version": "1.0"
+         },
+         "geometry": {
+          "position": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 175.0,
+           "y": 760.0
+          },
+          "size": {
+           "height": 20.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 20.0
+          },
+          "type_identifier": "com.apple.apps.content-language.geometry",
+          "version": "1.0"
+         },
+         "path": {
+          "bezier": {
+           "path": "M 0.5,0 L 1,0.5 L 0.5,1 L 0,0.5 Z",
+           "space": {
+            "position": {
+             "type_identifier": "com.apple.apps.content-language.position",
+             "version": "1.0",
+             "x": 0.0,
+             "y": 0.0
+            },
+            "size": {
+             "height": 1.0,
+             "type_identifier": "com.apple.apps.content-language.size",
+             "version": "1.0",
+             "width": 1.0
+            },
+            "type_identifier": "com.apple.apps.content-language.rect",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.path.bezier-path",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.path",
+          "version": "1.0"
+         },
+         "preset_identifier": "shape_base",
+         "type_identifier": "com.apple.apps.content-language.shape",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      },
+      {
+       "object": {
+        "textbox": {
+         "geometry": {
+          "position": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 130.0,
+           "y": 590.0
+          },
+          "size": {
+           "height": 200.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 1700.0
+          },
+          "type_identifier": "com.apple.apps.content-language.geometry",
+          "version": "1.0"
+         },
+         "preset_identifier": "textbox_base",
+         "text": {
+          "paragraphs": [
+           {
+            "contents": [
+             {
+              "run": {
+               "string": "Kyoto",
+               "style": {
+                "preset_identifier": "title_text",
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             }
+            ],
+            "style": {
+             "preset_identifier": "para_left",
+             "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph",
+            "version": "1.0"
+           },
+           {
+            "contents": [
+             {
+              "run": {
+               "string": "Where old temples ",
+               "style": {
+                "preset_identifier": "subtitle_text",
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             },
+             {
+              "run": {
+               "string": "meet quiet gardens.",
+               "style": {
+                "character_fill": {
+                 "color": {
+                  "rgba": {
+                   "blue": 0.106,
+                   "green": 0.51,
+                   "red": 0.412,
+                   "type_identifier": "com.apple.apps.content-language.color.rgba",
+                   "version": "1.1"
+                  },
+                  "type_identifier": "com.apple.apps.content-language.color",
+                  "version": "1.0"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.fill",
+                 "version": "1.0"
+                },
+                "italic": true,
+                "preset_identifier": "subtitle_text",
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             }
+            ],
+            "style": {
+             "preset_identifier": "para_left",
+             "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.text",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.textbox",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.1"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      },
+      {
+       "object": {
+        "textbox": {
+         "geometry": {
+          "position": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 130.0,
+           "y": 970.0
+          },
+          "size": {
+           "height": 40.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 1660.0
+          },
+          "type_identifier": "com.apple.apps.content-language.geometry",
+          "version": "1.0"
+         },
+         "preset_identifier": "textbox_base",
+         "text": {
+          "paragraphs": [
+           {
+            "contents": [
+             {
+              "run": {
+               "string": "EST. 794  ·  THE ANCIENT CAPITAL",
+               "style": {
+                "character_fill": {
+                 "color": {
+                  "rgba": {
+                   "blue": 0.9,
+                   "green": 0.94,
+                   "red": 0.96,
+                   "type_identifier": "com.apple.apps.content-language.color.rgba",
+                   "version": "1.1"
+                  },
+                  "type_identifier": "com.apple.apps.content-language.color",
+                  "version": "1.0"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.fill",
+                 "version": "1.0"
+                },
+                "font_size": 18.0,
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             }
+            ],
+            "style": {
+             "preset_identifier": "para_right",
+             "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.text",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.textbox",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.1"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      }
+     ],
+     "type_identifier": "com.apple.apps.content-language.slide",
+     "version": "1.0"
+    }
+   ],
+   "theme": {
+    "locale": "en_US",
+    "name": "White",
+    "type_identifier": "com.apple.apps.content-language.keynote-theme",
+    "version": "1.0"
+   },
+   "type_identifier": "com.apple.apps.content-language.presentation",
+   "version": "1.0",
+   "zzz": [
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  "a44195ae:1247": [
+   {
+    "identifier": "base_text",
+    "properties": {
+     "font_name": "Helvetica Neue",
+     "tracking": 0.0
+    }
+   },
+   {
+    "identifier": "title_text",
+    "parent_identifier": "base_text",
+    "properties": {
+     "bold": true,
+     "character_fill": {
+      "color": {
+       "rgba": {
+        "blue": 0.9,
+        "green": 0.94,
+        "red": 0.96,
+        "type_identifier": "com.apple.apps.content-language.color.rgba",
+        "version": "1.1"
+       }
+      }
+     },
+     "font_name": "Didot",
+     "font_size": 96
+    }
+   },
+   {
+    "identifier": "subtitle_text",
+    "parent_identifier": "base_text",
+    "properties": {
+     "character_fill": {
+      "color": {
+       "rgba": {
+        "blue": 0.9,
+        "green": 0.94,
+        "red": 0.96,
+        "type_identifier": "com.apple.apps.content-language.color.rgba",
+        "version": "1.1"
+       }
+      }
+     },
+     "font_name": "Helvetica Neue Light",
+     "font_size": 32
+    }
+   },
+   {
+    "identifier": "para_left",
+    "properties": {
+     "alignment": "left",
+     "line_spacing": {
+      "kind": "relative",
+      "value": 1.0
+     }
+    }
+   },
+   {
+    "identifier": "para_right",
+    "properties": {
+     "alignment": "right",
+     "line_spacing": {
+      "kind": "relative",
+      "value": 1.0
+     }
+    }
+   },
+   {
+    "identifier": "textbox_base",
+    "properties": {
+     "layout_properties": {
+      "padding": {
+       "bottom": 0,
+       "left": 0,
+       "right": 0,
+       "top": 0
+      },
+      "shrink_to_fit": true,
+      "vertical_alignment": "top"
+     },
+     "shadow": "none",
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "shape_base",
+    "properties": {
+     "stroke": "empty"
+    }
+   },
+   {
+    "identifier": "cy-a",
+    "parent_identifier": "cy-b",
+    "properties": {}
+   },
+   {
+    "identifier": "cy-b",
+    "parent_identifier": "cy-a",
+    "properties": {}
+   }
+  ],
+  "a930a13a:10873": {
+   "slide_size": {
+    "height": 1080.0,
+    "type_identifier": "com.apple.apps.content-language.size",
+    "version": "1.0",
+    "width": 1920.0
+   },
+   "slides": [
+    {
+     "background": {
+      "standard": {
+       "gradient": {
+        "flavor": {
+         "radial": {
+          "base_natural_size": {
+           "height": 1080.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 1920.0
+          },
+          "end_point": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 1920.0,
+           "y": 1080.0
+          },
+          "start_point": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 960.0,
+           "y": 400.0
+          },
+          "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor.radial",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor",
+         "version": "1.0"
+        },
+        "stops": [
+         {
+          "color": {
+           "rgba": {
+            "blue": 0.1,
+            "green": 0.06,
+            "red": 0.05,
+            "type_identifier": "com.apple.apps.content-language.color.rgba",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.color",
+           "version": "1.0"
+          },
+          "fraction": 0.0,
+          "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+          "version": "1.0"
+         },
+         {
+          "color": {
+           "rgba": {
+            "blue": 0.05,
+            "green": 0.03,
+            "red": 0.02,
+            "type_identifier": "com.apple.apps.content-language.color.rgba",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.color",
+           "version": "1.0"
+          },
+          "fraction": 1.0,
+          "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+          "version": "1.0"
+         }
+        ],
+        "type_identifier": "com.apple.apps.content-language.fill.gradient",
+        "version": "1.1"
+       },
+       "type_identifier": "com.apple.apps.content-language.fill",
+       "version": "1.0"
+      },
+      "type_identifier": "com.apple.apps.content-language.slide-background",
+      "version": "1.0"
+     },
+     "contents": [
+      {
+       "object": {
+        "group": {
+         "caption": {
+          "is_visible": false,
+          "text": {
+           "string": "hidden caption; kept for round-trip",
+           "type_identifier": "com.apple.apps.content-language.text",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.label",
+          "version": "1.0"
+         },
+         "children": [
+          {
+           "image": {
+            "geometry": {
+             "position": {
+              "type_identifier": "com.apple.apps.content-language.position",
+              "version": "1.0",
+              "x": 0.0,
+              "y": 0.0
+             },
+             "size": {
+              "height": 600.0,
+              "type_identifier": "com.apple.apps.content-language.size",
+              "version": "1.0",
+              "width": 1920.0
+             },
+             "type_identifier": "com.apple.apps.content-language.geometry",
+             "version": "1.0"
+            },
+            "resource": {
+             "indirect": {
+              "filename": "hero.png",
+              "type_identifier": "com.apple.apps.content-language.resource.indirect-resource",
+              "version": "1.0"
+             },
+             "type_identifier": "com.apple.apps.content-language.resource",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.image",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.canvas-object",
+           "version": "1.0"
+          },
+          {
+           "shape": {
+            "fill": {
+             "gradient": {
+              "flavor": {
+               "linear": {
+                "angle": 270.0,
+                "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor.linear",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.fill.gradient.flavor",
+               "version": "1.0"
+              },
+              "stops": [
+               {
+                "color": {
+                 "rgba": {
+                  "alpha": 0.0,
+                  "blue": 0.0,
+                  "green": 0.0,
+                  "red": 0.0,
+                  "type_identifier": "com.apple.apps.content-language.color.rgba",
+                  "version": "1.1"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.color",
+                 "version": "1.0"
+                },
+                "fraction": 0.0,
+                "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+                "version": "1.0"
+               },
+               {
+                "color": {
+                 "rgba": {
+                  "alpha": 0.85,
+                  "blue": 0.0,
+                  "green": 0.0,
+                  "red": 0.0,
+                  "type_identifier": "com.apple.apps.content-language.color.rgba",
+                  "version": "1.1"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.color",
+                 "version": "1.0"
+                },
+                "fraction": 1.0,
+                "type_identifier": "com.apple.apps.content-language.fill.gradient.stop",
+                "version": "1.0"
+               }
+              ],
+              "type_identifier": "com.apple.apps.content-language.fill.gradient",
+              "version": "1.1"
+             },
+             "type_identifier": "com.apple.apps.content-language.fill",
+             "version": "1.0"
+            },
+            "geometry": {
+             "position": {
+              "type_identifier": "com.apple.apps.content-language.position",
+              "version": "1.0",
+              "x": 0.0,
+              "y": 350.0
+             },
+             "size": {
+              "height": 350.0,
+              "type_identifier": "com.apple.apps.content-language.size",
+              "version": "1.0",
+              "width": 1920.0
+             },
+             "type_identifier": "com.apple.apps.content-language.geometry",
+             "version": "1.0"
+            },
+            "preset_identifier": "shape_base",
+            "type_identifier": "com.apple.apps.content-language.shape",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.canvas-object",
+           "version": "1.0"
+          }
+         ],
+         "title": {
+          "paragraph_properties": {
+           "alignment": "center",
+           "character_properties": {
+            "character_fill": {
+             "color": {
+              "rgba": {
+               "blue": 0.9,
+               "green": 0.94,
+               "red": 0.96,
+               "type_identifier": "com.apple.apps.content-language.color.rgba",
+               "version": "1.1"
+              },
+              "type_identifier": "com.apple.apps.content-language.color",
+              "version": "1.0"
+             },
+             "type_identifier": "com.apple.apps.content-language.fill",
+             "version": "1.0"
+            },
+            "font_size": 14.0,
+            "type_identifier": "com.apple.apps.content-language.character-properties",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+           "version": "1.0"
+          },
+          "text": {
+           "string": "Hero",
+           "type_identifier": "com.apple.apps.content-language.text",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.label",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.group",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      },
+      {
+       "object": {
+        "shape": {
+         "fill": {
+          "color": {
+           "rgba": {
+            "blue": 0.106,
+            "green": 0.51,
+            "red": 0.412,
+            "type_identifier": "com.apple.apps.content-language.color.rgba",
+            "version": "1.1"
+           },
+           "type_identifier": "com.apple.apps.content-language.color",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.fill",
+          "version": "1.0"
+         },
+         "geometry": {
+          "position": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 175.0,
+           "y": 760.0
+          },
+          "size": {
+           "height": 20.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 20.0
+          },
+          "type_identifier": "com.apple.apps.content-language.geometry",
+          "version": "1.0"
+         },
+         "path": {
+          "bezier": {
+           "path": "M 0.5,0 L 1,0.5 L 0.5,1 L 0,0.5 Z",
+           "space": {
+            "position": {
+             "type_identifier": "com.apple.apps.content-language.position",
+             "version": "1.0",
+             "x": 0.0,
+             "y": 0.0
+            },
+            "size": {
+             "height": 1.0,
+             "type_identifier": "com.apple.apps.content-language.size",
+             "version": "1.0",
+             "width": 1.0
+            },
+            "type_identifier": "com.apple.apps.content-language.rect",
+            "version": "1.0"
+           },
+           "type_identifier": "com.apple.apps.content-language.path.bezier-path",
+           "version": "1.0"
+          },
+          "type_identifier": "com.apple.apps.content-language.path",
+          "version": "1.0"
+         },
+         "preset_identifier": "shape_base",
+         "type_identifier": "com.apple.apps.content-language.shape",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.0"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      },
+      {
+       "object": {
+        "textbox": {
+         "geometry": {
+          "position": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 130.0,
+           "y": 590.0
+          },
+          "size": {
+           "height": 200.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 1700.0
+          },
+          "type_identifier": "com.apple.apps.content-language.geometry",
+          "version": "1.0"
+         },
+         "preset_identifier": "textbox_base",
+         "text": {
+          "paragraphs": [
+           {
+            "contents": [
+             {
+              "run": {
+               "string": "Kyoto",
+               "style": {
+                "preset_identifier": "title_text",
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             }
+            ],
+            "style": {
+             "preset_identifier": "para_left",
+             "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph",
+            "version": "1.0"
+           },
+           {
+            "contents": [
+             {
+              "run": {
+               "string": "Where old temples ",
+               "style": {
+                "preset_identifier": "subtitle_text",
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             },
+             {
+              "run": {
+               "string": "meet quiet gardens.",
+               "style": {
+                "character_fill": {
+                 "color": {
+                  "rgba": {
+                   "blue": 0.106,
+                   "green": 0.51,
+                   "red": 0.412,
+                   "type_identifier": "com.apple.apps.content-language.color.rgba",
+                   "version": "1.1"
+                  },
+                  "type_identifier": "com.apple.apps.content-language.color",
+                  "version": "1.0"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.fill",
+                 "version": "1.0"
+                },
+                "italic": true,
+                "preset_identifier": "subtitle_text",
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             }
+            ],
+            "style": {
+             "preset_identifier": "para_left",
+             "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.text",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.textbox",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.1"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      },
+      {
+       "object": {
+        "textbox": {
+         "geometry": {
+          "position": {
+           "type_identifier": "com.apple.apps.content-language.position",
+           "version": "1.0",
+           "x": 130.0,
+           "y": 970.0
+          },
+          "size": {
+           "height": 40.0,
+           "type_identifier": "com.apple.apps.content-language.size",
+           "version": "1.0",
+           "width": 1660.0
+          },
+          "type_identifier": "com.apple.apps.content-language.geometry",
+          "version": "1.0"
+         },
+         "preset_identifier": "textbox_base",
+         "text": {
+          "paragraphs": [
+           {
+            "contents": [
+             {
+              "run": {
+               "string": "EST. 794  ·  THE ANCIENT CAPITAL",
+               "style": {
+                "character_fill": {
+                 "color": {
+                  "rgba": {
+                   "blue": 0.9,
+                   "green": 0.94,
+                   "red": 0.96,
+                   "type_identifier": "com.apple.apps.content-language.color.rgba",
+                   "version": "1.1"
+                  },
+                  "type_identifier": "com.apple.apps.content-language.color",
+                  "version": "1.0"
+                 },
+                 "type_identifier": "com.apple.apps.content-language.fill",
+                 "version": "1.0"
+                },
+                "font_size": 18.0,
+                "type_identifier": "com.apple.apps.content-language.character-properties",
+                "version": "1.0"
+               },
+               "type_identifier": "com.apple.apps.content-language.text-run",
+               "version": "1.0"
+              },
+              "type_identifier": "com.apple.apps.content-language.paragraph.constituent",
+              "version": "1.0"
+             }
+            ],
+            "style": {
+             "preset_identifier": "para_right",
+             "type_identifier": "com.apple.apps.content-language.paragraph-properties",
+             "version": "1.0"
+            },
+            "type_identifier": "com.apple.apps.content-language.paragraph",
+            "version": "1.0"
+           }
+          ],
+          "type_identifier": "com.apple.apps.content-language.text",
+          "version": "1.0"
+         },
+         "type_identifier": "com.apple.apps.content-language.textbox",
+         "version": "1.0"
+        },
+        "type_identifier": "com.apple.apps.content-language.canvas-object",
+        "version": "1.1"
+       },
+       "type_identifier": "com.apple.apps.content-language.slide-object",
+       "version": "1.0"
+      }
+     ],
+     "type_identifier": "com.apple.apps.content-language.slide",
+     "version": "1.0"
+    }
+   ],
+   "theme": {
+    "locale": "en_US",
+    "name": "White",
+    "type_identifier": "com.apple.apps.content-language.keynote-theme",
+    "version": "1.0"
+   },
+   "type_identifier": "com.apple.apps.content-language.presentation",
+   "version": "1.0"
+  }
+ }
+}
